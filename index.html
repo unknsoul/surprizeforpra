@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <meta name="description" content="A birthday message crafted with warmth and sincerity.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ═══════════════════════════════════════════════════════════════════
+         COUNTDOWN LOCK SCREEN - Shows until February 19th
+         ═══════════════════════════════════════════════════════════════════ -->
+    <div id="countdown-screen" class="countdown-screen">
+        <!-- Interactive Ball Grid Background -->
+        <canvas id="ball-grid-canvas" class="ball-grid-canvas"></canvas>
+
+        <!-- Animated Background -->
+        <div class="countdown-bg">
+            <div class="countdown-gradient"></div>
+            <div class="countdown-stars" id="countdown-stars"></div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="countdown-content">
+
+            <h1 class="countdown-title">Something Special</h1>
+            <p class="countdown-subtitle">A surprise</p>
+
+            <!-- Timer Display -->
+            <div class="countdown-timer">
+                <div class="timer-unit">
+                    <div class="timer-value" id="days">00</div>
+                    <div class="timer-label">Days</div>
+                </div>
+                <div class="timer-separator">:</div>
+                <div class="timer-unit">
+                    <div class="timer-value" id="hours">00</div>
+                    <div class="timer-label">Hours</div>
+                </div>
+                <div class="timer-separator">:</div>
+                <div class="timer-unit">
+                    <div class="timer-value" id="minutes">00</div>
+                    <div class="timer-label">Minutes</div>
+                </div>
+                <div class="timer-separator">:</div>
+                <div class="timer-unit">
+                    <div class="timer-value" id="seconds">00</div>
+                    <div class="timer-label">Seconds</div>
+                </div>
+            </div>
+
+            <div class="countdown-quote">
+                <span class="quote-mark">"</span>
+                <p>The best things in life are worth waiting for...</p>
+                <span class="quote-mark">"</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         MAIN BIRTHDAY CONTENT (Hidden until the day)
+         ═══════════════════════════════════════════════════════════════════ -->
+    <div id="main-content" class="main-content hidden">
+        <!-- Floating Background Images (Faded, randomly positioned) -->
+        <div class="floating-bg-images" id="floating-bg" aria-hidden="true">
+            <!-- These images will be populated from your gallery images -->
+            <img class="floating-bg-image" src="images/img1.png" alt="" loading="lazy">
+            <img class="floating-bg-image" src="images/img2.png" alt="" loading="lazy">
+            <img class="floating-bg-image" src="images/img3.png" alt="" loading="lazy">
+            <img class="floating-bg-image" src="images/img4.png" alt="" loading="lazy">
+            <img class="floating-bg-image" src="images/img5.png" alt="" loading="lazy">
+            <img class="floating-bg-image" src="images/img6.png" alt="" loading="lazy">
+        </div>
+
+        <!-- Floating Particles Canvas -->
+        <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+        <!-- Sparkle Effects Container -->
+        <div id="sparkles-container" class="sparkles-container" aria-hidden="true"></div>
+
+        <!-- Confetti Burst Container -->
+        <div id="confetti-container" aria-hidden="true"></div>
+
+        <!-- ═══════════════════════════════════════════════════════════════════
+         SECTION 1: OPENING MOMENT (HERO)
+         ═══════════════════════════════════════════════════════════════════ -->
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Happy Birthday<span class="name-highlight">Gurlll</span></h1>
+                <p class="hero-subtitle">Some people don't arrive loudly they stay.</p>
+            </div>
+            <div class="scroll-indicator" aria-hidden="true">
+                <span></span>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════════
+         SECTION 2 & 3: MEMORY GALLERY + QUOTES
+         ═══════════════════════════════════════════════════════════════════ -->
+        <section id="memories" class="memories">
+            <div class="memories-container">
+
+                <!-- Image 1 -->
+                <figure class="memory-card" data-animate>
+                    <!-- 📷 ADD: Replace src with your image path (images/img1.png) -->
+                    <img src="images/img1.png" alt="A cherished memory" loading="lazy">
+                </figure>
+
+                <!-- Quote 1 -->
+                <blockquote class="editorial-quote" data-animate>
+                    <p>"Some connections don't need a future to be real."</p>
+                </blockquote>
+
+                <!-- Image 2 -->
+                <figure class="memory-card offset-right" data-animate>
+                    <!-- 📷 ADD: Replace src with your image path (images/img2.png) -->
+                    <img src="images/img2.png" alt="A cherished memory" loading="lazy">
+                </figure>
+
+                <!-- Image 3 -->
+                <figure class="memory-card" data-animate>
+                    <!-- 📷 ADD: Replace src with your image path (images/img3.png) -->
+                    <img src="images/img3.png" alt="A cherished memory" loading="lazy">
+                </figure>
+
+                <!-- Quote 2 -->
+                <blockquote class="editorial-quote align-right" data-animate>
+                    <p>"You mattered long before words existed."</p>
+                </blockquote>
+
+                <!-- Image 4 -->
+                <figure class="memory-card offset-left" data-animate>
+                    <!-- 📷 ADD: Replace src with your image path (images/img4.png) -->
+                    <img src="images/img4.png" alt="A cherished memory" loading="lazy">
+                </figure>
+
+                <!-- Quote 3 -->
+                <blockquote class="editorial-quote" data-animate>
+                    <p>"Not everything meaningful asks to stay."</p>
+                </blockquote>
+
+                <!-- Image 5 -->
+                <figure class="memory-card offset-right" data-animate>
+                    <!-- 📷 ADD: Replace src with your image path (images/img5.png) -->
+                    <img src="images/img5.png" alt="A cherished memory" loading="lazy">
+                </figure>
+
+                <!-- Image 6 -->
+                <figure class="memory-card" data-animate>
+                    <!-- 📷 ADD: Replace src with your image path (images/img6.png) -->
+                    <img src="images/img6.png" alt="A cherished memory" loading="lazy">
+                </figure>
+
+                <!-- Quote 4 -->
+                <blockquote class="editorial-quote align-right" data-animate>
+                    <p>"This comes without expectations only honesty."</p>
+                </blockquote>
+
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════════
+         SECTION 4: THE LETTER
+         ═══════════════════════════════════════════════════════════════════ -->
+        <section id="letter" class="letter-section">
+            <div class="letter-container" data-animate>
+                <article class="letter-paper" <p class="letter-line">On your birthday, I wanted to give you something
+                    honest.</p>
+                    <p class="letter-line">Not a promise. Not a question. Just... this.</p>
+                    <p class="letter-line">&nbsp;</p>
+                    <p class="letter-line">You've become someone who matters to me in ways I didn't plan.</p>
+                    <p class="letter-line">I don't know mi bolat pn asel ki nahi thenva but you matters for me.</p>
+                    <p class="letter-line">I notice things differently because you exist.</p>
+                    <p class="letter-line">&nbsp;</p>
+                    <p class="letter-line">I'm not asking for anything.</p>
+                    <p class="letter-line">I'm always waiting for ...</p>
+                    <p class="letter-line">I just wanted you to know</p>
+                    <p class="letter-line">that someone out there carries a quiet gratitude for you.</p>
+                    <p class="letter-line">&nbsp;</p>
+                    <p class="letter-line">You deserve a year that surprises you with its kindness.</p>
+                    <p class="letter-line">You deserve to be seen, without conditions.</p>
+                    <p class="letter-line">You deserve good things simply because you do.</p>
+                    <p class="letter-line">&nbsp;</p>
+                    <p class="letter-line">Happy Birthday.</p>
+                    <p class="letter-line">Thank you for being exactly who you are.</p>
+                    <p class="letter-line">&nbsp;</p>
+                    <p class="letter-line">I know I don't deserve you but if you not no one is there. I know that if we
+                        were
+                        together, I would have given you everything I had, without limits, without conditions. But
+                        destiny
+                        never even gave me
+                        a fair chance. You were never written in my fate. I wasn’t lucky, not even a little. I lost
+                        before
+                        the fight even began.
+                    </p>
+                    <p class="letter-line">&nbsp;</p>
+                    <p class="letter-line">Sometimes it hurts thinking about how easily Bhushan got you. No struggle, no
+                        waiting, no silent
+                        prayers. He had you, just like that. Yes, he faced problems later, but at least he lived the
+                        moments
+                        I only imagined. I didn’t even get the chance to stand beside you when it mattered.</p>
+                    <p class="letter-line">&nbsp;</p>
+                    <p class="letter-line">What hurts the most is not losing you. It’s realizing that my destiny is so
+                        cruel
+                        that it never even
+                        tried for me. I stayed honest, I stayed real, and still I was left empty handed. Some people
+                        lose
+                        love after having it. I lost it without ever holding it. If you were with me, I’d love you in
+                        ways
+                        no
+                        one ever bothered to try.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════════
+         SECTION 5: CLOSING MOMENT
+         ═══════════════════════════════════════════════════════════════════ -->
+        <section id="closing" class="closing">
+            <div class="closing-content" data-animate>
+                <p class="closing-message">I hope this year gives you more than you ask for.</p>
+                <p class="closing-signature">— Someone who cares a lot.</p>
+            </div>
+            <!-- Container for rising hearts animation -->
+            <div id="closing-hearts" class="closing-hearts" aria-hidden="true"></div>
+        </section>
+
+    </div><!-- End main-content -->
+
+    <script src="script.js"></script>
+</body>
+
+</html>
